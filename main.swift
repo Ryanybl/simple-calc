@@ -50,15 +50,19 @@ else{
         let n2 = readLine(strippingNewline: true)!
         switch sign {
         case "-":
-            print("Result: " + String(Double(response)! - Double(n2)!))
+            result = String(Double(response)! - Double(n2)!)
         case "*":
-            print("Result: " + String(Double(response)! * Double(n2)!))
+            result = String(Double(response)! * Double(n2)!)
         case "/":
-            print("Result: " + String(Double(response)! / Double(n2)!))
+            result = String(Double(response)! / Double(n2)!)
         default:
-            print("Result: " + String(Double(response)! + Double(n2)!))
+            result = String(Double(response)! + Double(n2)!)
             }
     }
+}
+var resultArr = result.split(separator: ".")
+if(Int(resultArr[resultArr.count - 1]) == 0){
+    result = String(resultArr[0])
 }
 print("Result:" + result)
 
